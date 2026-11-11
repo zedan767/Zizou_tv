@@ -1,0 +1,93 @@
+<html lang="ar" dir="rtl"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#090909">
+  <title>Zizou TV</title>
+  <link rel="icon" type="image/png" href="image_6e3cdacd.png">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="topbar container">
+      <div></div>
+      <nav><a class="active" href="/">الرئيسية</a><a class="active" href="https://sir-tv.vip/">Sir Tv</a><a class="href=&quot;#matches&quot;">المباريات</a><a id="adminNav" style="display: none;">الإدارة</a></nav>
+      <a class="logo" href="/"><strong>Zizou TV</strong><small>kora live</small></a>
+    </div>
+    <div class="container">
+      <div class="promo"><span class="promo-mark">Z</span><div><b>تابع مباريات كرة القدم</b><small> في مكان واحد</small></div></div>
+      <div class="notice">مرحباً بك في <b>Zizou TV</b></div>
+    </div>
+  </header>
+
+  <main class="container" id="matches">
+    <section class="toolbar">
+      <div class="section-title">المباريات</div>
+      <div class="day-tabs">
+        <button class="day" data-offset="-1">الأمس</button>
+        <button class="day active" data-offset="0">اليوم</button>
+        <button class="day" data-offset="1">الغد</button>
+      </div>
+    </section>
+    <div class="competition-strip" id="competitionStrip">
+      <span>دوري أبطال أوروبا</span><span>الدوري الإنجليزي</span><span>الدوري الإسباني</span>
+      <span>الدوري الألماني</span><span>الدوري الإيطالي</span><span>الدوري الفرنسي</span><span>مباريات المنتخبات</span><span>دوري أبطال أفريقيا</span>
+    </div>
+    <div class="status-line"><span>مباريات</div>
+    <section id="matchList" class="matches"><div class="empty">لا توجد مباريات متاحة لهذه البطولات في هذا اليوم.</div></section>
+
+    <section class="admin-panel hidden" id="adminPanel">
+      <div class="admin-head"><div class="section-title">لوحة إدارة البث</div><button id="logoutBtn" class="btn">خروج</button></div>
+      <div id="loginBox" class="admin-card hidden">
+        <h3>دخول الإدارة</h3>
+        <label>البريد الإلكتروني<input id="email" type="email" autocomplete="username"></label>
+        <label>كلمة المرور<input id="password" type="password" autocomplete="current-password"></label>
+        <button id="loginBtn" class="btn orange">دخول</button><button id="resetPasswordBtn" type="button" class="btn" style="margin-top: 10px;">نسيت كلمة المرور؟</button>
+		<button id="resetPasswordBtn" class="btn">نسيت كلمة المرور؟</button>
+        <p id="loginMessage" class="help"></p>
+        <p class="help">استخدم حساب Firebase Admin الذي أنشأته مسبقاً.</p>
+      </div>
+      <div id="streamEditor" class="admin-card">
+        <h3>إضافة / تعديل رابط البث للمباراة</h3>
+        <label>اختر مباراة<select id="matchSelect"><option value="">اختر مباراة من القائمة</option></select></label>
+        <label>Embed Code<textarea id="embedCode" placeholder="&lt;iframe src=&quot;https://your-authorized-player.example/embed&quot; allowfullscreen&gt;&lt;/iframe&gt;"></textarea></label>
+        <div class="button-row"><button id="saveStreamBtn" class="btn orange">حفظ كود البث</button><button id="deleteStreamBtn" class="btn danger">حذف كود البث</button></div>
+        <p id="streamMessage" class="help">يتم ربط كود البث بمعرّف المباراة من football-data.org.</p>
+      </div>
+      <div id="manualMatchEditor" class="admin-card">
+        <h3>إضافة مباراة يدوياً</h3>
+        <label>تاريخ المباراة<input id="manualMatchDate" type="date"></label>
+        <label>الفريق الأول<input id="manualHomeTeam" type="text" placeholder="مثال: مصر"></label>
+        <label>الفريق الثاني<input id="manualAwayTeam" type="text" placeholder="مثال: مالاوي"></label>
+        <div class="button-row">
+          <label style="flex:1">نتيجة الفريق الأول<input id="manualHomeScore" type="number" min="0" step="1" placeholder="اختياري"></label>
+          <label style="flex:1">نتيجة الفريق الثاني<input id="manualAwayScore" type="number" min="0" step="1" placeholder="اختياري"></label>
+        </div>
+        <button id="addManualMatchBtn" class="btn orange" type="button">إضافة المباراة</button>
+        <p id="manualMatchMessage" class="help">يمكنك ترك النتيجة فارغة وإضافتها لاحقاً.</p>
+      </div><div class="admin-card">
+  <h3>حذف مباراة يدوية</h3>
+  <label>اختر المباراة اليدوية
+    <select id="manualDeleteSelect"><option value="">اختر مباراة لحذفها</option></select>
+  </label>
+  <button id="deleteManualMatchBtn" class="btn danger" type="button">
+    حذف المباراة المحددة
+  </button>
+  <p id="deleteManualMatchMessage" class="help"></p>
+</div><div class="admin-card">
+  <h3>حذف مباراة يدوية</h3>
+  <label>اختر المباراة اليدوية
+    <select id="manualDeleteSelect"><option value="">اختر مباراة لحذفها</option></select>
+  </label>
+  <button id="deleteManualMatchBtn" class="btn danger" type="button">
+    حذف المباراة المحددة
+  </button>
+  <p id="deleteManualMatchMessage" class="help"></p>
+</div>
+    </section>
+  </main>
+
+  <footer class="container"><b>Zizou TV--</b>zedanamr95@gmail.com</footer>
+  <script type="module" src="/app.js"></script>
+
+
+</body></html>
